@@ -1,0 +1,977 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Roboto";
+    font-size: 16px;
+}
+
+
+h2, h3{
+    font-family: 'poppins', sans-serif;  
+}
+
+h2{
+    font-size: 42px;
+    color: #091a23;
+    text-align: center;
+    padding: 30px 0;
+}
+
+/* ------------------ ScrollUp button styles */
+
+.scrollToTopBtn {
+    background-color: #1A73E8;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 48px;
+    width: 48px;   
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 10;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: all .5s ease
+  }
+      
+  .showBtn {
+    opacity: 1;
+    transform: translateY(0)
+  }
+
+/* ---------------- header uchun stillar*/
+
+#header .top{
+    display: flex;
+    min-height: 50px;
+    font-family: "Josefin Sans", "Montserrat", sans-serif;
+}
+
+.top .social{
+    background-color: #2D3092;
+    min-width: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: #fff;
+    padding: 0 10px;
+    font-size: 16px;
+}
+
+.social a{
+    display: block;
+    margin: 0 15px;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.social a:hover{
+    color: tomato;
+}
+
+.second{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 74px;
+    padding-left: 15px;
+    align-items: center;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.second li{
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.second li a{
+    display: inline-block;
+    font-weight: 600;
+    color: #86878a;
+    transition: all 0.3s ease;
+    vertical-align: baseline;
+}
+
+.second li a:hover{
+    color: #2d3092;
+}
+
+.second li i{
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 20px;
+}
+
+/* ------------ Navbar uchun stillar */ 
+
+.navbar{
+    font-family: "Josefin Sans", "Montserrat", sans-serif;
+    background-color: #fff;
+    position: sticky;
+    z-index: 15;
+    height: 110px;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.1s ease-in-out;
+    box-shadow: 0px 5px 20px rgb(0,0,0,0.1);
+} 
+
+.navbar .logo{
+    display: flex;
+    background-color: #F4F4F4;
+    justify-content: center;
+    align-items: center;
+    min-width: 220px;
+    font-size: 28px;
+    font-family: "Lobster Two", sans-serif;
+}
+
+.logo a{
+    color: #1A73E8;
+}
+
+.toggle{
+    display: none;
+    align-self: center;
+}
+
+.toggle button{
+    width: 50px;
+    height: 40px;
+    font-size: 25px;
+}
+
+.menu-bar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-bar > ul{
+    width: 75%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+}
+.menu-bar ul > li{
+    position: relative;
+}
+
+.menu-bar > ul > li > a{
+    display: inline-block;
+    padding: 25px 0px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #091a23;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.menu-bar > ul > li a::before{
+    content: "";
+    width: 0;
+    height: 2px;
+    background-color: #1A73E8;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.collapsible:after {
+    font-family: "Font Awesome 5 Pro";
+    content: "\f107";
+    color: rgb(51, 10, 10);
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.press:after {
+    font-family: "Font Awesome 5 Pro";
+    content: "\f106";
+    color: rgb(51, 10, 10);
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.menu-bar li a:hover::before, .menu-bar a.active::before{
+    width: 100%;
+}
+
+/* ------------ menu-bar's sub menu */
+.sub-menu{
+    background-color: #ffffff;
+    position: absolute;
+    opacity: 0;
+    z-index: 5;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+    width: 150%;
+    transform: translateY(-10px);
+}
+
+.sub-menu a{
+    padding: 15px;
+    display: inline-block;
+    color: #091a23;
+    width: 100%;
+}
+
+.sub-menu a:hover{
+    color: #1A73E8;
+}
+
+.menu-bar > ul > li:hover > ul{ 
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+}
+
+.search{
+    font-size: 0;
+    position: relative;
+    left: -15px;
+    align-self: center;
+    background-color: #F4F4F4;
+    border-radius: 50px;
+}
+
+.search input[type="search"]{
+    border: none;
+    font-size: 15px;
+    height: 50px;
+    background-color: transparent;
+    color: #757575;
+    padding-left: 15px;
+    padding-right: 5px;
+    outline: none;
+    font-family: "Josefin Sans", "Montserrat", sans-serif;
+    font-weight: 600;
+}
+
+.search button{
+    border: none;
+    background-color: #2d3092;
+    color: #ffffff;
+    height: 50px;
+    padding: 0 20px ;
+    border-radius: 50%;   
+    outline: none;
+}
+
+/* main uchin stillar */
+
+.main{
+    background-color: #ffffff;
+}
+
+.main section:nth-child(2n + 1){
+    background-color: #F6FBFF;
+}
+
+.padding{
+    padding: 50px 80px;
+}
+
+/* ---------- carousel uchun stillar */ 
+
+.carousel{
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    margin-bottom: 120px;
+}
+.title{
+    position: absolute;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 600px;
+    background-color: rgba(65, 105, 225, 0.4);
+} 
+
+.title h1{
+    text-align: center;
+    background-color: transparent;
+    color: #F6FBFF;
+    font-family: 'Poppins';
+    font-size: 40px;
+    position: relative;
+    bottom: 50px;
+    text-shadow: 3px 3px 20px rgba(0, 0, 0,0.8);
+    line-height: 2;
+}
+
+.sliders{
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+}
+
+.sliders img{
+    width: 100%;
+    position: relative;
+    bottom: 50px;
+}
+
+/* main qismidagi statistika unchun stillar */
+
+/* ----------- statistics bo'limi uchun stillar */
+.statistics{
+    background-color: #3ba1f5;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+   
+}
+
+.statistics > div{
+    border: 1px solid rgba(134, 135, 138,0.1);
+    background-color: #fff;
+    width: 300px;
+    margin: 20px auto 0;
+    padding: 50px 0;
+    /* margin: 50px 0; */
+    border-radius: 10px;
+    font-size: 24px;
+    color: #2D3092;
+    font-family: "Josefin Sans", "Montserrat", sans-serif;
+}
+
+.statistics i{
+    font-size: 40px;
+}
+
+.counter{
+    margin: 20px 0 10px 0;
+    font-size: 40px;
+    font-weight: 600;
+}
+/* yangilikalar uchun stillar bu sahaifa asisiy qismni posts bo'limidan oladi*/
+.new p{
+    margin: 5px 0 !important;
+    font-size: 14px;
+}
+
+
+.new .body{
+    margin-bottom: 30px;
+    padding: 15px;
+}
+
+.new h3{
+    font-size: 18px !important;
+}
+
+/* ------------------ E'lonlar bo'limi uchun stillar */
+.posters{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.poster{
+    width: 380px;
+    margin: 20px auto 0;
+}
+
+/* posterning ichidagi rasm larni to'g'irlash */
+
+.poster .img{
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.poster .img img{
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+    transition: all 0.5s ease;
+}
+
+.poster:hover img{
+    transform: scale(1.1);
+}
+/* poster body */
+
+.body{
+    padding: 30px;
+    border: 1px solid #e4e7ff;
+    border-top: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.body h3{
+    font-size: 25px;
+    padding: 15px 0;
+    font-weight: 700;
+    color: #444649;
+}
+
+.body p{
+    font-size: 14px;
+    color: #64676c;
+    margin: 30px 0;
+}
+
+.poster-link a{
+    font-size: 18px;
+    color: #2d3092;
+    font-family:  "Poppins", sans-serif;
+    transition: all 0.3s ease;
+}
+
+.poster-link a:hover{
+    color: #250051;
+}
+
+/* barchasini ko'rish tugmasi */
+
+.more{
+    text-align: center;
+    margin-top: 30px;
+}
+
+.more a{
+    display: inline-block;
+    padding: 15px 30px;
+    color: #2D3092;
+    background-color: transparent;
+    border: 2px solid #2D3092;
+    font-size: 20px;
+    border-radius: 5px;
+    /* outline: 2px solid #2D3092; */
+    transition: all 0.3s ease-in-out;
+    /* outline-offset: -2px; */
+}
+
+.more a:hover{
+    background-color: #2D3092;
+    color: #ffffff;
+}
+
+
+
+/*----------- hukimat partallari */
+
+.hukumat-portal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    vertical-align: baseline;
+    flex-wrap: wrap;
+    height: 330px;
+    align-items: center;
+}
+.hukumat-portal > div {
+    height: 60px;
+    display: flex;
+    margin-top: 15px;
+}
+.hukumat-portal div > div{
+    width: 60px;
+    height: 60px;
+    border: 1px solid #86878a;
+    padding: 10px;
+    border-radius: 50%;
+    margin-right: 25px;
+    align-self: center;
+    justify-self: center;
+}
+
+.hukumat-portal img{
+    width: 100%;
+}
+
+.hukumat-portal a{
+    display: inline-block;
+    align-self: center;
+    color: #250051;
+    justify-self: center;
+    transition: all 0.3s ease;
+}
+
+.hukumat-portal a:hover{
+    color: #2D3092;
+}
+
+/* footer uchun stillar */ 
+
+footer{
+    background-color: #0B0B1D;
+    color: #868C98;
+    padding: 50px 50px 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.footer{
+    background-color: #0B0B1D;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
+    border-bottom: 1px solid #868C98;
+}
+
+.footer > div{
+    padding-right: 51px;
+    margin-right: 15px;
+    border-right: 1px solid #707070;
+}
+
+.footer div:last-child{
+    border: none;
+}
+
+.footer h4{
+    font-size: 20px;
+    color: #D8DBE2;
+    font-weight: 600;
+    padding-bottom: 22px;
+}
+
+/* rasmni markazga olib kelish */
+.asosiy div{
+    text-align: center;
+    width: 200px;
+ }
+
+.asosiy img{
+    width: 100%;
+}
+
+.asosiy p{
+    padding-top: 21px;
+}
+
+.havolalar nav{
+    display: flex;
+}
+
+.havolalar ul{
+    padding-right: 40px;
+}
+
+.havolalar li a{
+    color: #868C98;
+    line-height: 27px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+}
+
+.havolalar li a:hover{
+    color: #D8DBE2;
+    text-decoration: underline;
+}
+
+.weather{
+    display: flex;
+}
+.weather p{
+   margin-bottom: 5px;
+   font-size: 20px;
+   color: #D8DBE2;
+}
+
+.weather-icon{
+    margin-right: 20px;
+    width: 65px;
+    
+}
+
+.weather-icon img{
+    width: 100%;
+}
+
+.temp, .wind{
+    padding-left: 20px;
+}
+
+footer > p{
+    text-align: center;
+    padding: 22px 0;
+}
+
+
+
+
+
+/* Info sahifasi uchun stillar */ 
+.info{
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.info > div{
+    width: 70%;
+}
+
+
+div.lastnews{
+    width: 30%;
+    margin-right: 10px;
+    padding-right: 5px;
+    border-right: 1px solid #D8DBE2;
+}
+
+.lastnews h4{
+    padding: 15px 0;
+    font-size: 18px;
+}
+
+.lastnews li{
+    display: flex;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #D8DBE2;
+}
+
+
+
+.nav-img{
+    width: 80%;
+    height: 100%;
+    margin-right: 15px;
+}
+
+.nav-img img{
+    width: 100%;
+}
+
+
+.info .img{
+    text-align: center;
+    width: 80%;
+    height: 300px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.info img{
+    width: 100%;
+}
+
+.definetion{
+    padding: 15px 10px;
+    line-height: 1.5;
+    width: 100%;
+    vertical-align: top;
+}
+@media screen and (max-width: 1200px){
+    /* haeader uchun stillar */
+    .second{
+        padding-right: 0;
+    }
+
+    
+    .menu-bar ul{
+        width: 100%;
+    }
+    
+    .menu-bar li a{
+        font-size: 15px;
+        margin: 0 5px;
+    }
+
+    .search{
+        position: absolute;
+        left: 60%;
+        top: -40px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    .search input[type="search"]{
+        height: 30px;
+        width: 180px;
+    }
+    .search button[type="submit"]{
+        height: 30px;
+        width: 30px;
+        padding: 0;
+    }
+
+    .hukumat-portal{
+        padding: 50px 30px;
+        font-size: 14px;
+    }
+
+    footer{
+        padding: 50px 15px;
+    }
+
+    .footer > div{
+        padding-right: 15px;
+    }
+    .footer > div:last-child{
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 992px){
+    /* haeader uchun stillar */
+    .top{
+        display: none !important;
+    }
+
+    .navbar{
+        padding: 0 30px;
+        height: 66px;
+        border-bottom: 1px solid #86878a;
+       
+    }
+
+    .navbar .logo{
+        background-color: #fff;
+        padding: 10px;
+    }
+
+    .toggle{
+        display: block;
+    }
+
+    .menu-bar {
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+        background-color: rgba(255, 255, 255, 0.95);    
+        /* width: 100vw; */
+        overflow: auto;
+        position: absolute;
+        height: 0;
+        z-index: 15;
+        top: 66px;
+        left: 0px;
+        transition: all 0.3s ease-in;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .menu-bar ul{
+        display: block;
+        padding: 0 30px;
+        width: 100%;
+    }
+
+    .menu-bar li a{ 
+        padding: 10px 0 !important;
+        width: 100%;    
+        font-size: 18px;
+        padding: 5px 0; 
+        margin: 5px 0;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 400; 
+    }
+    .menu-bar li a:hover{     
+        color: #1A73E8;
+       
+    }
+
+    .menu-bar li a::before{     
+        width: 0 !important;
+    }
+
+    .sub-menu{
+        background-color: transparent;
+        position: relative;
+        height: 0;
+        opacity: 1;
+        overflow: hidden;
+        pointer-events: all;
+        transition: all 0.3s ease-in-out;
+        width: 100%;
+        transform: none;
+    }
+    .sub-menu li a{
+        padding: 4px 0 !important;
+        margin: 0 !important;
+        font-size: 16px;
+    }
+
+    .search{
+        display: block;
+        position: static;
+        width: 100%;   
+        background-color: transparent;
+        padding: 10px 30px;
+    }
+
+    .search input[type="search"]{
+        width: 80%;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        background-color: #F4F4F4;
+    }
+
+    .search button{
+        border-radius: 0;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    .carousel{
+        height: 500px;
+        margin-bottom: 60px;
+    }
+    .title{
+        height: 500px;
+    } 
+
+    .title h1{
+        font-size: 30px;
+    }
+    
+    .sliders img{
+        bottom: 0;
+    }
+
+
+    .hukumat-portal{
+        height: 560px;
+    }
+
+    .footer{
+        display: block;
+        /* align-items: center; */
+        
+        /* width: 100%; */
+    }
+
+    .footer > div{
+        text-align: center;
+        border: none;
+        margin-bottom: 30px;
+        padding: 0;
+    }
+
+    .havolalar ul{
+        padding: 0;
+    }
+
+    .havolalar li{
+        padding-right: 15px;
+        text-align: left;
+    }
+
+    .footer > div > div,
+    .footer > div > div,
+    .footer  nav {
+        margin: auto !important;
+        justify-content: center;
+    }
+}
+
+
+@media screen and (max-width: 768px){
+    /* haeader uchun stillar */
+        
+    .carousel{
+        height: 300px;
+        margin-bottom: 60px;
+    }
+    .title{
+        height: 300px;
+    } 
+
+    .title h1{
+        font-size: 28px;
+        margin: 30px;
+        bottom: 0;
+    }   
+}
+@media screen and (max-width: 576px){
+    /* haeader uchun stillar */
+    .main h2{
+        font-size: 25px;
+        padding: 15px 0;
+    }
+    .padding{
+        padding: 20px 0;
+    }
+    
+   .navbar{
+       padding: 10px;
+   }
+
+   .toggle button{
+       width: 40px;
+       height: 30px;
+       font-size: 20px;
+   }
+   .search input[type="search"]{
+       width: 84%;
+   }
+
+   .search input[type="search"], .search button{
+       height: 33px;
+       padding: 0 10px;
+   }
+
+   .carousel{
+        height: 200px;
+        margin-bottom: 60px;
+    }
+    .title{
+        height: 200px;
+    }
+
+    .more{
+        margin: 0;
+        padding: 10px 0;
+    }
+    
+    .padding{
+        padding: 0;
+    }
+
+    .title h1{
+        font-size: 20px;
+        margin: 30px;
+        bottom: 0;
+    }
+
+    .statistics{
+        padding-bottom: 20px;
+    }
+
+
+    .hukumat-portal{
+        height: 490px;
+        margin: 20px;
+    }
+    
+    
+
+
+}
+
+
+
+
